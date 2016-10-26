@@ -1,0 +1,107 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: theXuser
+ * Date: 26/10/2016
+ * Time: 03:20
+ */
+
+namespace ScolariteBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * EtudiantLicence
+ *
+ * @ORM\Table(name="etudiant_licence")
+ * @ORM\Entity(repositoryClass="ReregistrationBundle\Repository\EtudiantLicenceRepository")
+ */
+class Etudiant
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cne", type="string", length=10)
+     */
+    private $cne;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nationalite", type="string", length=10)
+     */
+    private $nationalite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=255)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="genre", type="string", length=255)
+     */
+    private $genre;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="handicap", type="boolean")
+     */
+    private $handicap;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="bourse", type="boolean")
+     */
+    private $bourse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lieuNaiss", type="string", length=255)
+     */
+    private $lieuNaiss;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dateNaiss", type="date", length=255)
+     */
+    private $dateNaiss;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cin", type="string", length=20)
+     */
+    private $cin;
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->nom . ' ' . $this->prenom . ' ' . $this->cne;
+    }
+}
