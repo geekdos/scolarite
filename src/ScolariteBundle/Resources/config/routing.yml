@@ -1,3 +1,4 @@
-scolarite_homepage:
+
+scolarite_home:
     path:     /
-    defaults: { _controller: ScolariteBundle:Default:index }
+    defaults: { _controller: ScolariteBundle:Home:home }
